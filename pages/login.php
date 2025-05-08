@@ -1,10 +1,10 @@
 <?php 
 session_start();
-include('conexao.php');
+include('../conexao.php');
 
 if(empty($_POST['email']) || empty ($_POST['senha']))
 {
-  header('Location: cadastro.php');
+  header('Location: ../pages/cadastro.php');
   exit();
 }
 
@@ -21,13 +21,13 @@ if($row == 1)
 {
   $usuario_bd = mysqli_fetch_assoc($result);
   $_SESSION['email'] = $usuario_bd['email'];
-  header('Location: sobre.php');
+  header('Location: ../pages/sobre.php');
   exit();
 }
 else
 {
   $_SESSION['nao_autenticado'] = true;
-  header('Location: cadastro.php');
+  header('Location: ../pages/cadastro.php');
   exit();
 }
 
