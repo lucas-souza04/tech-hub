@@ -15,5 +15,14 @@ CREATE TABLE tb_cadastro
  UNIQUE (email)
 ); 
 
+CREATE TABLE tb_curso 
+( 
+ id_curso INT PRIMARY KEY AUTO_INCREMENT,  
+ nome_curso VARCHAR(255) NOT NULL,  
+ descricao TEXT NOT NULL,  
+ carga_horaria INT NOT NULL,  
+);
+
 DROP TABLE tb_cadastro; 
+DROP TABLE tb_curso;
 DROP DATABASE cadastro;
