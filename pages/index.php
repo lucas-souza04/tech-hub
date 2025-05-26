@@ -17,39 +17,9 @@ session_start();
 </head>
 
 <body>
-	<nav>
-		<div id="conteudo-nav">
-			<div>
-				<img class="imagem" src="../assets/images/LogoTech.png" id="logo">
-			</div>
-			<ul>
 
+<?php include('../includes/header.php'); ?>
 
-				<li>
-					Inicío
-				</li>
-
-
-
-				<li>
-					Cursos
-				</li>
-
-
-
-				<li>
-					Sobre Nós
-				</li>
-
-
-				<li>
-					<a id="botao-login" href="../pages/cadastro.php">
-						Login
-					</a>
-				</li>
-			</ul>
-		</div>
-	</nav>
 	<main>
 		<div id="container-info">
 			<h1>

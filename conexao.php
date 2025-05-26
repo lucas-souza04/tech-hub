@@ -1,10 +1,12 @@
 <?php
+$hostname = 'localhost';
+$db = 'mysql';
+$username = 'root';
+$password = '';
 
-define('HOST', 'localhost');
-define('USUARIO', 'root');
-define('SENHA', '');
-define('DB', 'cadastro');
+$conn = new mysqli($hostname, $username, $password, $db);
 
-$conexao = mysqli_connect(HOST, USUARIO, SENHA, DB) or die ('Não foi possivel conectar');
-
+if ($conn->connect_error) {
+    die("Erro de conexão: " . $conn->connect_error);
+}
 ?>
