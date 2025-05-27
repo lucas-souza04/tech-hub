@@ -41,6 +41,6 @@ if (mysqli_query($conexao, $sql)) {
 
 mysqli_close($conexao);
 
-header('Location: ../pages/sobre.php');
+header('Location: ../pages/cursos.php');
 exit;
 ?>

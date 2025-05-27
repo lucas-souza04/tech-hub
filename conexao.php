@@ -1,6 +1,6 @@
 <?php
 $hostname = 'localhost';
-$db = 'mysql';
+$db = 'tech_hub';
 $username = 'root';
 $password = 'root';
 
