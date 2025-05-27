@@ -79,6 +79,7 @@ main {
 }
 
 #container-img {
+  margin-bottom: 700px;
   width: 30%;
   -webkit-box-shadow: 3px 3px 21px 8px rgba(198, 198, 198, 1);
   -moz-box-shadow: 3px 3px 21px 8px rgba(198, 198, 198, 1);
