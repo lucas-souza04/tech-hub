@@ -18,14 +18,14 @@ session_start();
 
 <body>
 
-<?php include('../includes/header.php'); ?>
+	<?php include('../includes/header.php'); ?>
 
 	<main>
 		<div id="container-info">
 			<h1>
-				Desenvolvimento <br>
+				Curso de Desenvolvimento Web<br>
 				<span>
-					Web Avançado
+					Avançado!
 				</span>
 			</h1>
 			<p>

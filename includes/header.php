@@ -12,11 +12,11 @@
 					</a>
 				</li>
 
-				<li>
+				<!-- <li>
 				<a id="botao-sobre" href="../pages/sobre.php">
 						Sobre nós
 					</a>
-				</li>
+				</li> -->
 
 
 				<li>
