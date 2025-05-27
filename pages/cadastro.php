@@ -16,11 +16,13 @@ session_start();
         rel="stylesheet">
 </head>
 
+
 <body>
 
     <main id="container-cadastro">
 
         <div id="cadastro">
+            
             <div id="titulo-cadastrar">
                 <h1>
                     Cadastre-se:
@@ -58,21 +60,6 @@ session_start();
                 <div class="container-input">
                     <input type="email" name="email" placeholder="E-mail" required>
                     <input type="password" name="senha" placeholder="Senha" required>
-                </div>
-                <div class="container-input">
-                    <input type="text" name="cep" placeholder="CEP" class="input-100" id="cep" required>
-                </div>
-                <div class="container-input">
-                    <input type="text" name="logradouro" placeholder="Rua" id="logradouro" required>
-                    <input type="text" name="numero" placeholder="Número" required>
-                </div>
-                <div class="container-input">
-                    <input type="text" name="complemento" placeholder="Complemento">
-                    <input type="text" name="bairro" placeholder="Bairro" id="bairro" required>
-                </div>
-                <div class="container-input">
-                    <input type="text" name="cidade" placeholder="Cidade" id="cidade" required>
-                    <input type="text" name="estado" placeholder="Estado" id="estado" required>
                 </div>
                 <div class="container-input">
                     <input type="submit" value="Cadastrar" class="input-100">

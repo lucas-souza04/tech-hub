@@ -1,37 +1,46 @@
 <?php
+// Exibe erros para debug
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+
+// Inclui a conexão com o banco
+include('../conexao.php'); // Garante que seja incluído apenas uma vez
 
 session_start();
-include("../conexao.php");
 
+// Verifica se a conexão foi estabelecida
+if (!$conexao) {
+    die("Erro ao conectar com o banco de dados: " . mysqli_connect_error());
+}
+
+// Captura os dados do formulário com proteção
 $nome = mysqli_real_escape_string($conexao, trim($_POST['nome']));
 $sobrenome = mysqli_real_escape_string($conexao, trim($_POST['sobrenome']));
 $email = mysqli_real_escape_string($conexao, trim($_POST['email']));
-$senha = mysqli_real_escape_string($conexao, trim(md5($_POST['senha'])));
-$cep = mysqli_real_escape_string($conexao, trim($_POST['cep']));
-$logradouro = mysqli_real_escape_string($conexao, trim($_POST['logradouro']));
-$numero = mysqli_real_escape_string($conexao, trim($_POST['numero']));
-$complemento = mysqli_real_escape_string($conexao, trim($_POST['complemento']));
-$bairro = mysqli_real_escape_string($conexao, trim($_POST['bairro']));
-$cidade = mysqli_real_escape_string($conexao, trim($_POST['cidade']));
-$estado = mysqli_real_escape_string($conexao, trim($_POST['estado']));
+$senha = mysqli_real_escape_string($conexao, trim($_POST['senha']));
 
-$sql = "select count(*) as total from tb_cadastro where email = '$email'";
+// Verifica se o e-mail já está cadastrado
+$sql = "SELECT COUNT(*) as total FROM tb_aluno WHERE email = '$email'";
 $result = mysqli_query($conexao, $sql);
 $row = mysqli_fetch_assoc($result);
 
-if ($row['total'] == 1) {
-  $_SESSION['usuario_existe'] = true;
-  header('Location: ../pages/cadastro.php');
-  exit;
+if ($row['total'] > 0) {
+    $_SESSION['usuario_existe'] = true;
+    header('Location: ../index.php');
+    exit;
 }
 
-$sql = "INSERT INTO tb_cadastro (nome, sobrenome, email, senha, cep, logradouro, numero, complemento, bairro, cidade, estado) VALUES ('$nome', '$sobrenome', '$email', '$senha', '$cep', '$logradouro', '$numero', '$complemento', '$bairro', '$cidade', '$estado')";
+// Insere o usuário no banco
+$sql = "INSERT INTO tb_aluno (nome, sobrenome, email, senha) VALUES ('$nome', '$sobrenome', '$email', md5('$senha'))";
 
-if ($conexao->query($sql) === TRUE) {
-  $_SESSION['status_cadastro'] = true;
+if (mysqli_query($conexao, $sql)) {
+    $_SESSION['status_cadastro'] = true;
 }
 
-$conexao->close();
+mysqli_close($conexao);
 
-header('location: ../pages/cadastro.php');
+header('Location: ../pages/sobre.php');
 exit;
+?>

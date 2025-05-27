@@ -2,11 +2,11 @@
 $hostname = 'localhost';
 $db = 'mysql';
 $username = 'root';
-$password = '';
+$password = 'root';
 
-$conn = new mysqli($hostname, $username, $password, $db);
+$conexao = new mysqli($hostname, $username, $password, $db);
 
-if ($conn->connect_error) {
-    die("Erro de conexão: " . $conn->connect_error);
+if ($conexao->connect_error) {
+    die("Erro de conexão: " . $conexao->connect_error);
 }
 ?>
