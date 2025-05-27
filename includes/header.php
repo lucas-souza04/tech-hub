@@ -1,7 +1,7 @@
 <nav>
 		<div id="conteudo-nav">
-			<div>
-				<img class="imagem" src="../assets/images/LogoTech.png" id="logo">
+			<div id="btn-inicio">
+					<img class="imagem" src="../assets/images/LogoTech.png" id="logo">
 			</div>
 			<ul>
 

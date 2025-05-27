@@ -21,7 +21,7 @@ if($row == 1)
 {
   $usuario_bd = mysqli_fetch_assoc($result);
   $_SESSION['email'] = $usuario_bd['email'];
-  header('Location: ../pages/sobre.php');
+  header('Location: ../pages/cursos.php');
   exit();
 }
 else
