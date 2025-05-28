@@ -140,7 +140,7 @@ session_start();
 			
 		</div>	
 		
-		
+<!-- 		
 		<div id="container-info">
 			<div id="informacoes-curso">
 				<h1 class="titulo">
@@ -259,7 +259,7 @@ session_start();
 					</ul>
 				</div>
 			</div>
-		</div>
+		</div> -->
 		
 	</main>
 
